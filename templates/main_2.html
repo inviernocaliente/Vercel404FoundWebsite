@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>404-Found</title>
+  </head>
+</html>
+<body>
+  <header id="header">
+    {% include 'navbar_v2.html' %}
+    <header id="header_secondary">
+      <div class="container123">
+        <div class="container2">
+          <h1>The Power of Coding</h1>
+        <p>
+          Coding is more prevalent today than ever. Jumpstart your future with
+          Python!
+        </p>
+        </div>
+        <div class="startbutton">
+          <a href="{% url 'lessons_page' %}" class="cta">Start Today</a>
+        </div>
+      </div>
+      </body>
+    </header>
+  </header>
+  <style>
+     #header {
+        background-image: url('static/images/aaabstract.png');
+        background-size: auto;  
+        color: white;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+      }
+      #header .cta {
+        display: inline-block;
+        background-color: #ff7f00;
+        color: white;
+        padding: 10px 20px;
+      }
+      .container2{
+        position:relative; top: 300px;
+      }
+
+      .startbutton{
+        position:relative; top: 350px;
+      }
+  </style>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
