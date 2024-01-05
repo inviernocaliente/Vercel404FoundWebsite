@@ -133,7 +133,7 @@ def createRoom(request):
             name=request.POST.get('name'),
             description=request.POST.get('description')
         )
-        return redirect('home')
+        return redirect('lessons_page')
 
     context = {'form': form, 'topics': topics}
     return render(request, 'base/room_form.html', context)
