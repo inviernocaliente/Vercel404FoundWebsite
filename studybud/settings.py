@@ -96,7 +96,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://db_404founddb_user:q95kUrzJMKfeF3B25fEAmRlttRpOnvdi@dpg-cmbonk6d3nmc73ekvi8g-a.oregon-postgres.render.com/db_404founddb")
+DATABASES['default'] = dj_database_url.parse("postgresql://martianone2008:SX1I2lfthpVR@ep-square-glade-a62nxaha.us-west-2.aws.neon.tech/404FoundDB?sslmode=require")
 
 
 
