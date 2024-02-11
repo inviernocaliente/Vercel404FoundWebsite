@@ -24,7 +24,23 @@ urlpatterns = [
     #----------------------------- Course Section -------------------------------------#
 
     path('lessons_page', views.lessons_page, name="lessons_page"),
-    path('lesson/<int:lesson_id>/', views.lesson_detail, name='lesson_detail'),
-    path('complete_lesson/<int:lesson_id>/', views.complete_lesson, name='complete_lesson'),
+    path('lesson/<int:lesson_id>/redirect/', views.lesson_redirect, name='lesson_redirect'),
+    path('lesson/<int:lesson_id>/<int:lesson_page_id>/', views.lesson_page_detail, name='lesson_page_detail'),
+    path('complete_lesson/<int:lesson_page_id>/', views.complete_lesson, name='complete_lesson'),
+
+    #----------------------------------Misc.----------------------------------------------#
+
     path('aboutPage', views.aboutPage, name='aboutPage'),
+    path('opportunitiesPage', views.opportunitiesPage, name='opportunitiesPage'),
+
+    #-------------------------------------Admin-------------------------------------------#
+
+    path('adminHome', views.adminHome, name='adminHome'),
+    path('lessonAdminPage/<int:lesson_id>/', views.lessonAdminPage, name='lessonAdminPage'),
+    path('lesson/<int:lesson_id>/edit', views.lesson_detail_admin, name='lesson_detail_admin'),
+
+    path('lesson/<int:lesson_id>/page/<int:lesson_page_id>/edit/', views.edit_lesson_page, name='edit_lesson_page'),
+
+    path('lesson/<int:lesson_id>/create-lesson-page/', views.create_lesson_page, name='create_lesson_page'),
+    path('lesson/<int:lesson_id>/delete-lesson-page/<int:lesson_page_id>/', views.delete_lesson_page, name='delete_lesson_page'),
 ]

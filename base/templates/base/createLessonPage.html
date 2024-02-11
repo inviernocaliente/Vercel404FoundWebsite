@@ -1,0 +1,15 @@
+{% include 'main_3.html' %}
+{% block content %}
+</head>
+<body>
+    <h1>Create Lesson Page</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
+
+
+{% endblock content %}

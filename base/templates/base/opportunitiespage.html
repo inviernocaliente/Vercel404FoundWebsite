@@ -1,0 +1,125 @@
+{% include 'main_3.html' %}
+{% block content %}
+<style>
+    body {
+        background-image: url("static/images/aaabstract.png");
+        background-color: rgba(200, 200, 200, 0.2); /* Lighter background for the main page */
+    }
+
+    #main1234 {
+        background-image: url("static/images/aaabstract.png");
+        background-color: rgba(74, 74, 75, 0.9); /* Brighter background for #main1234 */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto; /* Add some margin to center the div */
+        max-width: 800px;
+    }
+
+    #main1234 h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #007bff; /* Blue color for heading */
+    }
+
+    .mission {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin-bottom: 2em;
+    }
+
+    #main1234 h2 {
+        font-size: 1.8em;
+        margin-bottom: 1em;
+        margin-top: 0em; /* Reduce the margin at the top */
+        color: #333; /* Dark gray color for headings */
+        text-align: center; /* Center the heading */
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin: 0;
+        color: #007bff; /* Blue color for subheadings */
+    }
+
+    h4 {
+        font-size: 1.1em;
+        margin-top: 0%;
+        margin-bottom: 0; /* Adjusted margin for better spacing */
+        color: #ff6b6b; /* Popping out color */
+        text-align: center;
+    }
+
+    #p {
+        font-size: 1.1em;
+        line-height: 1.4;
+        color: #555; /* Gray color for paragraphs */
+    }
+
+    #main1234 a {
+        color: #007bff; /* Blue color for links */
+        text-decoration: none;
+        display: block; /* Center the email link */
+        text-align: center; /* Center the email link */
+        margin-top: 0.5em; /* Add some space above the email link */
+    }
+
+
+
+    ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0;
+        margin: 0;
+    }
+
+    .paragraph1 {
+        text-align: center;
+        margin-bottom: 20px; /* Add margin to create space between sections */
+    }
+
+    /* Adjusted styles for "Make a Difference: Volunteer Opportunities" */
+    #main1234 h2 {
+        font-size: 1.75em; /* Increased font size */
+        color: #ff6b6b; /* Popping out color */
+        margin-top: 0px; /* Reduce the margin at the top */
+
+    }
+</style>
+
+</head>
+<body>
+  <div id="main1234">
+    <h1>404 Found</h1>
+    <p class="mission">Our organization's aim is to introduce coding to a wide audience, especially those who are underrepresented in STEM, in a simple and humorous way for completely free. 
+
+    </p>
+
+    <h2>Make a Difference: Volunteer Opportunities</h2>
+    <ul>
+      <li>
+        <h3>Cirriculum Developer</h3>
+        <p>Help us design and create engaging educational content and learning materials to facilitate effective coding instruction.</p>
+      </li>
+      <li>
+        <h3>Marketing and Outreach Assistant</h3>
+        <p>Help us develop and execute strategies to promote the organization's coding programs and expand its reach within the community.</p>
+      </li>
+        <h3>Web Developer</h3>
+        <p>Help us build and maintain our organization's online platforms and coding resources, ensuring accessibility and functionality for learners.</p>
+      </li>
+        <h3>Graphic Designer</h3>
+        <p>Help us design visually appealing graphics and branding materials to enhance our organization's online presence and educational resources.</p>
+      </li>
+        <h3>In person volunteer</h3>
+        <p>Help us volunteer in person and help serve our community.</p>
+      </li>
+    </ul>
+
+    <h4>Contact Us</h4>
+    <p class="paragraph1">Interested in learning more or joining our team? Reach out to us!</p>
+    <a href="mailto:management@404foundcode.org">Email: management@404foundcode.org</a>
+  </div>
+</body>
+{% endblock content %}

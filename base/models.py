@@ -54,16 +54,40 @@ class Message(models.Model):
 
 class Lesson(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField(default="Default lesson content")
-    google_slide_embed_url = models.URLField(blank=True, null=True)
-    python_compiler_embed_url = models.URLField(blank=True, null=True)
+    #is_completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
 
+class LessonPage(models.Model):
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='lesson_pages')
+    title = models.CharField(max_length=200)
+    content = models.TextField(default="Default lesson content")
+    google_slide_embed_url = models.URLField(blank=True, null=True)
+    python_compiler_embed_url = models.URLField(blank=True, null=True)
+    replit_embed_url = models.URLField(blank=True, null=True)
+    order = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.title 
+
 class UserProgress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    lesson_page = models.ForeignKey(LessonPage, on_delete=models.CASCADE, null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    entered_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'lesson_page')
+
+    def __str__(self):
+        if self.user:
+            return f"{self.user.username} - {self.lesson_page.title}"
+        return f"Anonymous - {self.lesson_page.title}"
+
+class UserLessonProgress(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, null=True, blank=True)
     is_completed = models.BooleanField(default=False)
     entered_at = models.DateTimeField(auto_now_add=True)
 
@@ -72,5 +96,5 @@ class UserProgress(models.Model):
 
     def __str__(self):
         if self.user:
-            return f"{self.user.username} - {self.lesson.title}"
+            return f"{self.user.username} - {self.title}"
         return f"Anonymous - {self.lesson.title}"

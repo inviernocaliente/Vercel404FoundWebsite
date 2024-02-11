@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, User
+from .models import Room, User, LessonPage
 
 class MyUserCreationForm(UserCreationForm):
     class Meta:
@@ -17,3 +17,8 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields = ['avatar','name', 'username', 'email', 'bio']
+
+class LessonPageForm(ModelForm):
+    class Meta:
+        model = LessonPage
+        fields = ['title', 'content', 'google_slide_embed_url', 'python_compiler_embed_url', 'replit_embed_url', 'order']
